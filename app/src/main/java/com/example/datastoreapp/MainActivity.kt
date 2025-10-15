@@ -39,7 +39,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            // variable para acceder al contexto de la app store
             val darkModeStore = StoreDarkMode(this)
+            // variable para obtener el valor de la variable del contexto para el modo oscuro
             val darkMode = darkModeStore.getDarkMode.collectAsState(initial = false)
             DataStoreAppTheme(
                 darkTheme = darkMode.value
